@@ -2,9 +2,7 @@
   <div class="image-grid__item">
     {{!-- model.forEach((image) => {}) --}}
     {{#each model.data as |image|}}
-      {{not image.is_album}}
-      {{!-- if (not([image.is_album])) --}}
-      {{#if (not image.is_album)}}
+      {{#unless image.is_album}}
         <figure class="post">
           <div class="post__frame">
             <img src="{{ image.link }}" alt="">
@@ -13,7 +11,16 @@
             <p>{{ image.title }}</p>
           </figcaption>
         </figure>
-      {{/if}}
+      {{else}}
+        <figure class="post">
+          <div class="post__frame">
+            <h2>Image not found</h2>
+          </div>
+          <figcaption>
+            <p>{{ image.title }}</p>
+          </figcaption>
+        </figure>
+      {{/unless}}
     {{/each}}
   </div>
 </div>
