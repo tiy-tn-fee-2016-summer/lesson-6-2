@@ -1,0 +1,17 @@
+<div class="image-grid">
+  <div class="image-grid__item">
+    {{!-- model.forEach((image) => {}) --}}
+    {{#each model as |image|}}
+      <figure class="post">
+        <div class="post__frame">
+          <img src="{{ image.img }}" alt="">
+        </div>
+        <figcaption>
+          <p>{{ image.title }}</p>
+        </figcaption>
+      </figure>
+    {{/each}}
+  </div>
+</div>
+
+{{outlet}}
