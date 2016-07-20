@@ -1,7 +1,7 @@
 <div class="image-grid">
-  <div class="image-grid__item">
-    {{!-- model.forEach((image) => {}) --}}
-    {{#each model.data as |image|}}
+  {{!-- model.forEach((image) => {}) --}}
+  {{#each model.data as |image|}}
+    <div class="image-grid__item">
       {{#unless image.is_album}}
         <figure class="post">
           <div class="post__frame">
@@ -21,8 +21,8 @@
           </figcaption>
         </figure>
       {{/unless}}
-    {{/each}}
-  </div>
+    </div>
+  {{/each}}
 </div>
 
 {{outlet}}
